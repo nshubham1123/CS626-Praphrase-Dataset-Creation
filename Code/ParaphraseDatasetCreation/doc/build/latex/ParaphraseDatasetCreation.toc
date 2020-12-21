@@ -1,0 +1,18 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}ParaphraseDatasetCreation}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}ParaphraseDatasetCreation package}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Subpackages}{1}{subsection.1.1.1}%
+\contentsline {subsubsection}{ParaphraseDatasetCreation.Hindi package}{1}{subsubsection*.3}%
+\contentsline {paragraph}{Submodules}{1}{paragraph*.4}%
+\contentsline {paragraph}{ParaphraseDatasetCreation.Hindi.Negative module}{1}{paragraph*.5}%
+\contentsline {paragraph}{ParaphraseDatasetCreation.Hindi.Positive module}{2}{paragraph*.11}%
+\contentsline {paragraph}{Module contents}{3}{paragraph*.20}%
+\contentsline {subsubsection}{ParaphraseDatasetCreation.Malayalam package}{3}{subsubsection*.21}%
+\contentsline {paragraph}{Submodules}{3}{paragraph*.22}%
+\contentsline {paragraph}{ParaphraseDatasetCreation.Malayalam.Negative module}{3}{paragraph*.23}%
+\contentsline {paragraph}{ParaphraseDatasetCreation.Malayalam.Positive module}{4}{paragraph*.28}%
+\contentsline {paragraph}{Module contents}{5}{paragraph*.35}%
+\contentsline {subsection}{\numberline {1.1.2}Module contents}{5}{subsection.1.1.2}%
+\contentsline {chapter}{\numberline {2}Indices and tables}{7}{chapter.2}%
+\contentsline {chapter}{Python Module Index}{9}{section*.36}%
+\contentsline {chapter}{Index}{11}{section*.37}%

@@ -1,0 +1,359 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ParaphraseDatasetCreation.Hindi package &#8212; ParaphraseDatasetCreation  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ParaphraseDatasetCreation.Malayalam package" href="ParaphraseDatasetCreation.Malayalam.html" />
+    <link rel="prev" title="ParaphraseDatasetCreation package" href="ParaphraseDatasetCreation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="paraphrasedatasetcreation-hindi-package">
+<h1>ParaphraseDatasetCreation.Hindi package<a class="headerlink" href="#paraphrasedatasetcreation-hindi-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-ParaphraseDatasetCreation.Hindi.Negative">
+<span id="paraphrasedatasetcreation-hindi-negative-module"></span><h2>ParaphraseDatasetCreation.Hindi.Negative module<a class="headerlink" href="#module-ParaphraseDatasetCreation.Hindi.Negative" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ParaphraseDatasetCreation.Hindi.Negative.Negative_Paraphrases">
+<em class="property">class </em><code class="descclassname">ParaphraseDatasetCreation.Hindi.Negative.</code><code class="descname">Negative_Paraphrases</code><a class="headerlink" href="#ParaphraseDatasetCreation.Hindi.Negative.Negative_Paraphrases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class generates negative paraphrase for input sentence using 2 methods:
+1. proper_noun_swap()
+2. negation_by_compound()</p>
+<dl class="method">
+<dt id="ParaphraseDatasetCreation.Hindi.Negative.Negative_Paraphrases.get_dep_tree">
+<code class="descname">get_dep_tree</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#ParaphraseDatasetCreation.Hindi.Negative.Negative_Paraphrases.get_dep_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>function to do dependency parsing of sentence</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>text</strong> (<em>string of words</em>) – sentence to be parsed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of tuples of form (parent word , dependency relation , current word)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list of tuples</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ParaphraseDatasetCreation.Hindi.Negative.Negative_Paraphrases.get_tagged_sent">
+<code class="descname">get_tagged_sent</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#ParaphraseDatasetCreation.Hindi.Negative.Negative_Paraphrases.get_tagged_sent" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>function to do POS tagging of sentence by tokenizing it into words</dt>
+<dd>return list of words with corresponding POS tag</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>text</strong> (<em>string</em>) – string of words to be tagged</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of tuples of form (word,tag)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list of tuples</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ParaphraseDatasetCreation.Hindi.Negative.Negative_Paraphrases.negation_by_compound">
+<code class="descname">negation_by_compound</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#ParaphraseDatasetCreation.Hindi.Negative.Negative_Paraphrases.negation_by_compound" title="Permalink to this definition">¶</a></dt>
+<dd><p>function which returns negative paraphrase of given sentence , by swapping Proper Nouns (NNP)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>text</strong> (<em>string</em>) – sentence to be paraphrased</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">negative paraphrased sentence</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ParaphraseDatasetCreation.Hindi.Negative.Negative_Paraphrases.proper_noun_swap">
+<code class="descname">proper_noun_swap</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#ParaphraseDatasetCreation.Hindi.Negative.Negative_Paraphrases.proper_noun_swap" title="Permalink to this definition">¶</a></dt>
+<dd><p>function which returns negative paraphrase of given sentence , by swapping Proper Nouns (NNP)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>text</strong> (<em>string</em>) – sentence to be paraphrased</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">negative paraphrased sentence</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ParaphraseDatasetCreation.Hindi.Positive">
+<span id="paraphrasedatasetcreation-hindi-positive-module"></span><h2>ParaphraseDatasetCreation.Hindi.Positive module<a class="headerlink" href="#module-ParaphraseDatasetCreation.Hindi.Positive" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases">
+<em class="property">class </em><code class="descclassname">ParaphraseDatasetCreation.Hindi.Positive.</code><code class="descname">Positive_Paraphrases</code><a class="headerlink" href="#ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class generated positive paraphrases using 2 methods:
+1. get_paraphrase_by_synonym_change
+2. get_paraphrase_by_change_conj</p>
+<dl class="method">
+<dt id="ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases.find_pos_tag">
+<code class="descname">find_pos_tag</code><span class="sig-paren">(</span><em>tag</em><span class="sig-paren">)</span><a class="headerlink" href="#ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases.find_pos_tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>it return POS tag on which synset is searched , we are only replacing Noun , Verb and Adjective</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tag</strong> (<em>string</em>) – POS tag</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">pyiwn object of POS tag</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases.get_dep_tree">
+<code class="descname">get_dep_tree</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases.get_dep_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>function to do dependency parsing of sentence</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>text</strong> (<em>string of words</em>) – sentence to be parsed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of tuples of form (parent word , dependency relation , current word)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list of tuples</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases.get_paraphrase_by_change_conj">
+<code class="descname">get_paraphrase_by_change_conj</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases.get_paraphrase_by_change_conj" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>function which returns negative paraphrase of given sentence , by changing order of conjunctions</dt>
+<dd>dependency tuple format: (word_parent&lt;index,text&gt; , dep_relation , word_child&lt;index,text&gt; )
+conj_indx will store indexes of all words modifed as conj (i.e. I like a , b and c) ,so contain index of a , b ,c</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>text</strong> (<em>string</em>) – sentence to be paraphrased</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">paraphrased sentence by changing order of conjunctions</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases.get_paraphrase_by_synonym">
+<code class="descname">get_paraphrase_by_synonym</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases.get_paraphrase_by_synonym" title="Permalink to this definition">¶</a></dt>
+<dd><p>function which returns paraphrase of given sentence , by synonyms substitution
+it replaces each word with its Synonyms , Proper Nouns are not replaced</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>text</strong> (<em>string</em>) – sentence to be paraphrased</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">paraphrased sentence by synonym substitution</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases.get_synonym">
+<code class="descname">get_synonym</code><span class="sig-paren">(</span><em>synonyms</em>, <em>word</em><span class="sig-paren">)</span><a class="headerlink" href="#ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases.get_synonym" title="Permalink to this definition">¶</a></dt>
+<dd><p>input is word and list of its synonyms , return synonym which is different from current word
+since list of synonyms also contain same word.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>synonyms</strong> (<em>list</em>) – list of synonyms for given word</li>
+<li><strong>word</strong> (<em>string</em>) – word for which synonyms to be returned</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">synonym of given word</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases.get_synonyms">
+<code class="descname">get_synonyms</code><span class="sig-paren">(</span><em>word</em>, <em>tag</em><span class="sig-paren">)</span><a class="headerlink" href="#ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases.get_synonyms" title="Permalink to this definition">¶</a></dt>
+<dd><p>return list of all synonyms for given word according to given POS tag</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>word</strong> (<em>string</em>) – word for which synonyms to be returned</li>
+<li><strong>tag</strong> (<em>string</em>) – POS tag for given word</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of synonyms of given word</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases.get_tagged_sent">
+<code class="descname">get_tagged_sent</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#ParaphraseDatasetCreation.Hindi.Positive.Positive_Paraphrases.get_tagged_sent" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>function to do POS tagging of sentence by tokenizing it into words</dt>
+<dd>return list of words with corresponding POS tag</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>text</strong> (<em>string</em>) – string of words to be tagged</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of tuples of form (word,tag)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list of tuples</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ParaphraseDatasetCreation.Hindi">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ParaphraseDatasetCreation.Hindi" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">ParaphraseDatasetCreation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ParaphraseDatasetCreation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ParaphraseDatasetCreation.html">ParaphraseDatasetCreation package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">ParaphraseDatasetCreation</a><ul>
+  <li><a href="ParaphraseDatasetCreation.html">ParaphraseDatasetCreation package</a><ul>
+      <li>Previous: <a href="ParaphraseDatasetCreation.html" title="previous chapter">ParaphraseDatasetCreation package</a></li>
+      <li>Next: <a href="ParaphraseDatasetCreation.Malayalam.html" title="next chapter">ParaphraseDatasetCreation.Malayalam package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Shubham Nemani, Pooja Verma, Anish M M.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/ParaphraseDatasetCreation.Hindi.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
